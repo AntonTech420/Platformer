@@ -12,7 +12,7 @@ public class CoinPickup : MonoBehaviour
             return;
         ScoreManager.AddPoints(pointsToAdd);
 
-        Destroy(gameObject)
+        Destroy(gameObject);
     }
 
 

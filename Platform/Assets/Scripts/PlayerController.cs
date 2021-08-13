@@ -18,11 +18,14 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    private Rigidbody2D myrigidbody2D;
+
 
     // Start is called before the first frame update
     void Start()
     {
-      anim = GetComponent<Animator>();  
+      anim = GetComponent<Animator>(); 
+      myrigidbody2D = GetComponent<Rigidbody2D>(); 
     }
 
     void FixedUpdate() 
@@ -68,14 +71,14 @@ public class PlayerController : MonoBehaviour
         moveVelocity = -moveSpeed;
       }
 
-      GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+      myrigidbody2D.velocity = new Vector2(moveVelocity, myrigidbody2D.velocity.y);
 
-      anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+      anim.SetFloat("Speed",Mathf.Abs(myrigidbody2D.velocity.x));
     }
 
     public void Jump()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+        myrigidbody2D.velocity = new Vector2(myrigidbody2D.velocity.x, jumpHeight);
     }
       
 }
