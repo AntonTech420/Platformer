@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
     public float jumpHeight;
+    private float moveVelocity;
+
+
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
@@ -49,17 +52,24 @@ public class PlayerController : MonoBehaviour
          doubleJumped = true;  
       }
 
+      moveVelocity = 0f;
+
 
       if (Input.GetKey(KeyCode.D))
       {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        // GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        moveVelocity = moveSpeed;
       }
 
 
       if (Input.GetKey(KeyCode.A))
       {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        // GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        moveVelocity = -moveSpeed;
       }
+
+      GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+
       anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
     }
 
