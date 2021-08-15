@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9216229737746226590}
   - component: {fileID: 8937741013276119232}
   - component: {fileID: 1971163038770612147}
+  - component: {fileID: -1360292253578888856}
   m_Layer: 10
   m_Name: Bullet2d
   m_TagString: Untagged
@@ -140,3 +141,16 @@ MonoBehaviour:
   player: {fileID: 0}
   bulletDamage: 1
   pointsForKill: 10
+--- !u!114 &-1360292253578888856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172819173493723358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e3c83e43e993d489fcdd610646d0af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6038382901270134860}
   - component: {fileID: 6038382901270134861}
   - component: {fileID: 6038382901270134871}
-  - component: {fileID: 6038382901270134864}
   - component: {fileID: 1857852853807958351}
+  - component: {fileID: 3616120719249714209}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -176,19 +176,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   edgeCheck: {fileID: 0}
---- !u!114 &6038382901270134864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6038382901270134862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d5708d6a83914342b0661a7601efb35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelManager: {fileID: 0}
 --- !u!114 &1857852853807958351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +191,19 @@ MonoBehaviour:
   enemyHealth: 5
   deatheffect: {fileID: 1000316309344994222, guid: e4d8b72df126b704ead353adbdc46d92, type: 3}
   pointsOnDeath: 10
+--- !u!114 &3616120719249714209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6038382901270134862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d14667a45fa2225449fb10239fa69ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToGive: 1
 --- !u!1 &6038382901594862582
 GameObject:
   m_ObjectHideFlags: 0

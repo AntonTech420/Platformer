@@ -79,6 +79,10 @@ public class PlayerController : MonoBehaviour
       myrigidbody2D.velocity = new Vector2(moveVelocity, myrigidbody2D.velocity.y);
 
       anim.SetFloat("Speed",Mathf.Abs(myrigidbody2D.velocity.x));
+      if(myrigidbody2D.velocity.x > 0)
+        transform.localScale = new Vector3(1f, 1f, 1f);
+      else if (myrigidbody2D.velocity.x < 0)
+        transform.localScale = new Vector3(-1f, 1f, 1f); 
 
       if(Input.GetButtonDown("Fire1"))
       {

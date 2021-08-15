@@ -17,12 +17,16 @@ public class LevelManager : MonoBehaviour
 
     private Rigidbody2D myrigidbody2D;
 
+    public HealthManager healthManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
       player = FindObjectOfType<PlayerController>();
-      myrigidbody2D = GetComponent<Rigidbody2D>();   
+      myrigidbody2D = GetComponent<Rigidbody2D>();
+
+      healthManager = FindObjectOfType<HealthManager>();   
     }
 
     // Update is called once per frame
@@ -54,6 +58,8 @@ public class LevelManager : MonoBehaviour
         player.transform.position = currentCheckpoint.transform.position;
         player.enabled = true;
         player.GetComponent<Renderer>().enabled = true;
+        healthManager.FullHealth();
+        healthManager.isDead = false;
         Instantiate(respawnParticle, currentCheckpoint.transform.position, currentCheckpoint.transform.rotation);
     }
 }
