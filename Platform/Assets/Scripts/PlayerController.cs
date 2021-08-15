@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public Transform firePoint;
+    public Transform FirePoint;
     public GameObject bullet;
 
     public float moveSpeed;
@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
       {
         // GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
         moveVelocity = moveSpeed;
+        transform.localScale = new Vector2(1f,1f);
       }
 
 
@@ -72,16 +73,17 @@ public class PlayerController : MonoBehaviour
       {
         // GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
         moveVelocity = -moveSpeed;
+        transform.localScale = new Vector2(-1f,1f);
       }
 
       myrigidbody2D.velocity = new Vector2(moveVelocity, myrigidbody2D.velocity.y);
 
       anim.SetFloat("Speed",Mathf.Abs(myrigidbody2D.velocity.x));
 
-    if(Input.GetKeyDown(KeyCode.Mouse0))
-    {
-      Instantiate(bullet, firePoint.position, firePoint.rotation);
-    }
+      if(Input.GetButtonDown("Fire1"))
+      {
+        Instantiate(bullet, FirePoint.position, FirePoint.rotation);
+      }
 
 
     }

@@ -1,33 +1,33 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-// public class CameraController : MonoBehaviour
-// {
+public class CameraController : MonoBehaviour
+{
 
-//     public PlayerController
+    public PlayerController player;
 
-//     public bool isAttached;
-//     public bool isFollowing;
+    public bool isAttached;
+    public bool isFollowing;
 
-//     public float xOffset;
-//     public float yOffset;
+    public float xOffset;
+    public float yOffset;
  
-//     void Start()
-//     {
-//         Player = FindObjectOfType<PlayerController>();
+    void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
 
-//         isFollowing = true;
+        isFollowing = true;
         
-//     }
+    }
 
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         if(isFollowing)
-//         {
-//             transform.position = new Vector3(Player.transform.position.x + xOffset, Player.transform.position.y + yOffset, transform.position.z);
-//         }
+    // Update is called once per frame
+    void Update()
+    {
+        if(isFollowing)
+        {
+            transform.position = new Vector3(player.transform.position.x + xOffset, player.transform.position.y + yOffset, transform.position.z);
+        }
         
-//     }
-// }
+    }
+}
