@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    public Transform firePoint;
+    public GameObject bullet;
+
     public float moveSpeed;
     public float jumpHeight;
     private float moveVelocity;
@@ -74,6 +77,13 @@ public class PlayerController : MonoBehaviour
       myrigidbody2D.velocity = new Vector2(moveVelocity, myrigidbody2D.velocity.y);
 
       anim.SetFloat("Speed",Mathf.Abs(myrigidbody2D.velocity.x));
+
+    if(Input.GetKeyDown(KeyCode.Mouse0))
+    {
+      Instantiate(bullet, firePoint.position, firePoint.rotation);
+    }
+
+
     }
 
     public void Jump()

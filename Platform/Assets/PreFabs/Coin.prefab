@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c287591c400242f46b2ab0485759aa1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToAdd: 5
+  pointsToAdd: 10
 --- !u!58 &-2350142284652909557
 CircleCollider2D:
   m_ObjectHideFlags: 0
