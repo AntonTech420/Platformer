@@ -10,6 +10,9 @@ public class BulletScript : MonoBehaviour
     public float speed;
     public GameObject enemyDeatheffect;
     public GameObject wallBullet;
+
+    // public AudioSource[] sounds;
+    // public AudioSource noise;
     public PlayerController player;
 
     public int bulletDamage;
@@ -18,7 +21,8 @@ public class BulletScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // sounds = GetComponents<AudioSource>();
+        // noise = sounds[1];
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<PlayerController>();
 

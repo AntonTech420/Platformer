@@ -6,12 +6,14 @@ public class Enemyhealth : MonoBehaviour
 {
 
     public int enemyHealth;
+    AudioSource _audio;
 
     public GameObject deatheffect;
     public int pointsOnDeath;
     // Start is called before the first frame update
     void Start()
     {
+        _audio = GetComponent<AudioSource>();
         
     }
 
@@ -21,6 +23,7 @@ public class Enemyhealth : MonoBehaviour
         if(enemyHealth <= 0)
         {
             Instantiate(deatheffect, transform.position, transform.rotation);
+            
             ScoreManager.AddPoints(pointsOnDeath);
             Destroy(gameObject);
         }
@@ -30,6 +33,7 @@ public class Enemyhealth : MonoBehaviour
     public void giveDamage(int damageToGive)
     {
         enemyHealth -= damageToGive;
+        // _audio.Play();
 
     }
 }

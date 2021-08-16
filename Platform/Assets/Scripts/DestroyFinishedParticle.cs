@@ -5,6 +5,8 @@ using UnityEngine;
 public class DestroyFinishedParticle : MonoBehaviour
 {
 
+   public float timer = 5.0f;
+
     private ParticleSystem thisParticleSystem;
     // Start is called before the first frame update
     void Start()
@@ -15,14 +17,19 @@ public class DestroyFinishedParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      timer -= 1*Time.deltaTime;
+      if(timer <= 0)
+      {
+        Destroy(gameObject); 
+      }
      if(thisParticleSystem.isPlaying)
         return;
 
-      Destroy(gameObject);     
+      // Destroy(gameObject);     
     }
 
-    void OnBecameInvisible() 
-    {
-     Destroy(gameObject);   
-    }
+    // void OnBecameInvisible() 
+    // {
+    //  Destroy(gameObject);   
+    // }
 }

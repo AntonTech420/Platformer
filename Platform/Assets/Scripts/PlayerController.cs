@@ -12,6 +12,14 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight;
     private float moveVelocity;
 
+    public float knockback;
+    public float knockbackCount;
+    public float knockbackLength;
+    public bool knockFromRight;
+    
+    
+
+
 
     public Transform groundCheck;
     public float groundCheckRadius;
@@ -76,7 +84,19 @@ public class PlayerController : MonoBehaviour
         transform.localScale = new Vector2(-1f,1f);
       }
 
-      myrigidbody2D.velocity = new Vector2(moveVelocity, myrigidbody2D.velocity.y);
+      if(knockbackCount <= 0)
+      {
+        myrigidbody2D.velocity = new Vector2(moveVelocity, myrigidbody2D.velocity.y);
+      }
+      else
+      {
+        if(knockFromRight)
+        myrigidbody2D.velocity = new Vector2(-knockback, knockback);
+        if(!knockFromRight)
+        myrigidbody2D.velocity = new Vector2(knockback, knockback);
+        knockbackCount -= Time.deltaTime;
+      }
+      
 
       anim.SetFloat("Speed",Mathf.Abs(myrigidbody2D.velocity.x));
       if(myrigidbody2D.velocity.x > 0)
