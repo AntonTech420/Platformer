@@ -140,7 +140,7 @@ MonoBehaviour:
   enemyDeatheffect: {fileID: 1000316309344994222, guid: e4d8b72df126b704ead353adbdc46d92, type: 3}
   wallBullet: {fileID: 5571980069420107111, guid: 9d49d9c6df4e3714ebfb02ba378a8bb0, type: 3}
   player: {fileID: 0}
-  bulletDamage: 1
+  bulletDamage: 3
   pointsForKill: 10
 --- !u!114 &-1360292253578888856
 MonoBehaviour:
